@@ -3,6 +3,8 @@
 namespace Config;
 
 // Create a new instance of our RouteCollection class.
+use function PHPUnit\Framework\any;
+
 $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
@@ -32,6 +34,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get((':any'), 'Pages::view/$1');
 
 /*
  * --------------------------------------------------------------------
