@@ -8,27 +8,36 @@ class AddNews extends Migration
     public function up()
     {
         $this->forge->addField([
-            'news_id'          => [
+            'id'          => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'news_title'       => [
+            'title'       => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '128',
+                'null' => false,
             ],
-            'news_description' => [
-                'type' => 'TEXT',
-                'null' => true,
+            'slug'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '128',
+                'null' => false,
+            ],
+            'body'       => [
+                'type'       => 'TEXT',
+                'null' => false,
             ],
         ]);
-        $this->forge->addKey('news_id', true);
+        $this->forge->addKey('id', true);
+        $this->forge->addKey('slug', false);
         $this->forge->createTable('news');
     }
+
 
     public function down()
     {
         $this->forge->dropTable('news');
     }
+
 }
