@@ -34,7 +34,6 @@ class AddNews extends Migration
         $this->forge->createTable('news');
     }
 
-
     public function down()
     {
         $this->forge->dropTable('news');

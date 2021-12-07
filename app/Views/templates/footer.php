@@ -1,3 +1,5 @@
-<h2>This is Footer.</h2>
+</div>
+<script src="<?php echo base_url('/assets/js/bootstrap.bundle.js')?>" ></script>
+
 </body>
 </html>
