@@ -11,6 +11,7 @@
         </dl>
         <a class="btn btn-danger" href="<?php echo base_url('user/logout') ?>">Log Out</a>
         <a class="btn btn-primary" href="<?php echo base_url('user/edit_profile') ?>">EDIT PROFILE</a>
+        <a class="btn btn-secondary" href="<?php echo base_url('news/index') ?>">News</a>
 
     </div>
 </div>

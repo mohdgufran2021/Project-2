@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 
+
 class AddNews extends Migration
 {
     public function up()
@@ -28,6 +29,22 @@ class AddNews extends Migration
                 'type'       => 'TEXT',
                 'null' => false,
             ],
+            'user_id'=>[
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
+            ],
+            'status'=>[
+                'type'=>'ENUM',
+                'constraint'=>['published','pending'],
+                'null'=>true
+            ],
+            'created_at'=>[
+                'type'=>'datetime',
+            ],
+            'updated_at'=>[
+                'type'=>'datetime'
+            ]
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addKey('slug', false);

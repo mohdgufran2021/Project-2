@@ -7,5 +7,6 @@ use CodeIgniter\Model;
 class NewsModel extends Model
 {
  protected $table = 'news';
- protected $allowedFields = ['title', 'slug', 'body'];
+ protected $allowedFields = ['title', 'slug', 'body','user_id','status'];
+ protected $useTimestamps = true;
 }
