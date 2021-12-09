@@ -44,6 +44,11 @@ class AddNews extends Migration
             ],
             'updated_at'=>[
                 'type'=>'datetime'
+            ],
+            'image'=>[
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+                'null' => false
             ]
         ]);
         $this->forge->addKey('id', true);

@@ -11,7 +11,7 @@
         }
         ?>
 
-<form action="<?php echo base_url('news/edit/'.$row['id']) ?>" method="post">
+<form action="<?php echo base_url('news/edit/'.$row['id']) ?>" enctype="multipart/form-data" method="post">
     <?= csrf_field() ?>
 
     <div class="mb-3">
@@ -31,6 +31,10 @@
             <option value="published" <?php echo set_select('status','published',$row['status']=='published');?>>Published</option>
             <option value="pending" <?php echo set_select('status','pending',$row['status']=='pending');?>>Pending</option>
         </select>
+    </div>
+
+    <div class="mb-3">
+        <input type="file" name="image" id="image">
     </div>
 
     <input type="submit" class="btn btn-secondary" name="submit" value="Update news item" />

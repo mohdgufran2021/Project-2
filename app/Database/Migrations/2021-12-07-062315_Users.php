@@ -31,14 +31,19 @@ class Users extends Migration
               'constraint' => '100',
               'null' => false,
           ],
-          'created_at'=>[
+            'created_at'=>[
               'type'=>'datetime',
               'null'=>true
           ],
           'updated_at'=>[
               'type'=>'datetime',
               'null'=>true
-          ]
+          ],
+        'image'=>[
+        'type'  =>  'VARCHAR',
+        'constraint' => 100,
+        'null'  => false
+        ],
         ]);
         $this->forge->addKey('id',true);
         $this->forge->createTable('users');
