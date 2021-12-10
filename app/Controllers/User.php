@@ -81,9 +81,7 @@ class User extends BaseController
                 $moved = $file->move(WRITEPATH . '/upload', $newName);
 
                 if ($moved) {
-
                    $insert['image']=$newName;
-
                 }
             }
 
