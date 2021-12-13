@@ -1,22 +1,23 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\Contact;
 use CodeIgniter\Controller;
 
 class Practice extends Controller
 {
- public function view()
- {
-     echo view('New/practice');
- }
+    public function view()
+    {
+        echo view('New/practice');
+    }
 
 
     public function about()
- {
-     echo view('New/practice');
-     echo view('New/about');
- }
+    {
+        echo view('New/practice');
+        echo view('New/about');
+    }
 
 
     public function home()
@@ -45,7 +46,7 @@ class Practice extends Controller
                 'lname'=>$this->request->getPost('lname'),
                 'country'=>$this->request->getPost('country'),
                 'contact'=>$this->request->getPost('contact'),
-                'subject'=>$this->request->getPost('subject'),
+                'subject'=>$this->request->getPost('subject')
             ];
 
             $obj = new Contact();
@@ -53,12 +54,9 @@ class Practice extends Controller
            {
             echo $data['success']='Success';
            }
-        }
-
-
-        echo view('templates/header',$data);
-        echo view('News/contact',$data);
-        echo view('templates/footer',$data);
-    }
-
+}
+echo view('templates/header', $data);
+echo view('News/contact', $data);
+echo view('templates/footer', $data);
+}
 }

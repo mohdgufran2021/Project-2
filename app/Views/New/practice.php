@@ -11,5 +11,12 @@
         <div class="header container">
             <a  href="<?php echo base_url('Practice/user')?>">User</a>
         </div>
+
+        <div class="header container">
+            <a  href="<?php echo base_url('Practice/user')?>">User</a>
+        </div>
+
+        <button onclick="window.print()">Print</button>
+
     </div>
 </div>
