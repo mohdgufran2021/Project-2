@@ -314,7 +314,7 @@
     /*
 
         //filter() Function=
-        const arr = [1,2,3,54,6,678,86,];
+        const arr = [1,2,3,54,6,678,86];
         const arr2 = arr.filter((item) => item>=54);
         console.log(arr2);
     */
@@ -337,6 +337,7 @@
 
 
     /*
+
     //some() Function=
     const arr = [1,2,3,4,56,6,7,44,54,23,1,3,5,2];
     const bool = arr.some( (item) => item>=44);
@@ -367,7 +368,6 @@
 
 
     /*
-
         //sort() Function=
         const arr = [12,32,54,523];
         const sort = arr.sort( (a, b) => a>b ? -1 : 1);
@@ -387,6 +387,20 @@
         let arr = Array.of(14,5,2,3,43);
         console.log(arr);
       */
+
+
+
+    class Employee
+    {
+    constructor( givenName, givenExperience, givenDivision )
+    {
+       this.name = givenName;
+       this.experience = givenExperience;
+       this.division = givenDivision;
+    }
+    }
+   obj = new Employee( 'Gufran', '3 Years', 'Computer Science' );
+    console.log(obj);
 
 
 

@@ -1,4 +1,67 @@
-<div class="row">
+<div class="container">
+    <div>
+        <form action="#" method="post">
+            <!--
+             <label for="name" class="form-label">Name</label>
+             <input type="text" class="form-control" id="name" name="name">
+
+             <label for="email" class="form-label">Email</label>
+             <input type="text" class="form-control" id="email" name="email">
+
+             <label for="pass" class="form-label">Password</label>
+             <input type="password" class="form-control" id="pass" name="pass">
+             -->
+
+            <button type="button" onclick="return postdata()" id="btn" class="btn btn-check">Fetch Data</button>
+
+            <div id="fetch"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    /*
+       function postdata() {
+               fetch('http://example.com/Practice/getQuote',{type: 'GET'})
+                   .then((response) => {
+                      return response.json();
+                   })
+                   .then((response) => {
+                       document.getElementById('fetch').innerHTML = response.data;
+                 });}
+    */
+
+       function postdata() {
+               fetch('http://example.com/Practice/getQuote',{type: 'GET'})
+                   .then((response) => {
+                      return response.json();
+                   })
+                   .then((response) => {
+                       document.getElementById('fetch').innerHTML = response.data;
+                 });}
+              setInterval(postdata,100);
+
+/*
+function postdata()
+{
+    fetch('http://example.com/Practice/getQuote')
+    .then( (response) =>
+    {
+        return response.json();
+    })
+    .then( (response) =>
+    {
+        document.getElementById('fetch').innerHTML = response.data;
+    })
+}*/
+
+
+
+
+</script>
+
+
+<!--<div class="row">
     <div class="col-12">
         <h1 class="text-secondary">This is Home Page For the Users.</h1>
         <div class="text-info">
@@ -60,3 +123,4 @@
         </div>
     </div>
 </div>
+-->
