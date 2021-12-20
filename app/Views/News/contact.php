@@ -1,5 +1,3 @@
-
-
 <div class="container bg-secondary">
     <div class="col-lg-8 m-auto d-block bg-gradient">
 
@@ -26,7 +24,7 @@
     document.getElementById('contactForm').addEventListener('submit',validation);
     function validation(event)
     {
-        console.log('validating');
+        //console.log('validating');
         document.getElementById('error1').innerHTML = '';
         var u_name = document.getElementById('name').value;
         var u_address = document.getElementById('address').value;

@@ -10,44 +10,37 @@
 
 <script>
 
-    let timerId;
-    let btnStart, btnStop,responseContainer;
+    let btnStart,btnStop,responseContainer,timerId;
     btnStart = document.getElementById('btnStart');
     btnStop = document.getElementById('btnStop');
     responseContainer = document.getElementById('fetch');
 
-    btnStart.addEventListener('click', startClock);
-    btnStop.addEventListener('click', cancelClock);
-    btnStop.disabled=true;
-
-    function getdata() {
-
-        fetch('http://example.com/TestFetch/get')
-            .then((response) => {
-                return response.json();
-            })
-            .then((response) => {
-                responseContainer.innerHTML = response.data;
-            });
-    }
-
-    //setInterval(getdata,1000);
-
-    function startClock() {
-        responseContainer.innerHTML = 'plaese wait';
-        btnStart.disabled=true;
-        btnStop.disabled=false;
-        timerId = setInterval(getdata, 1000);
-    }
+    btnStart.addEventListener('click',startClock);
+    btnStop.addEventListener('click',stopClock);
 
 
-    function cancelClock()
+    function getdat()
     {
+        fetch('http://Example.com/TestFetch/get')
+            .then( (response) => { return response.json(); })
+            .then( (response) => { responseContainer.innerHTML = response.data });
+    }
+
+    function startClock()
+    {
+        btnStart.disabled = true;
+        btnStop.disabled = false;
+        responseContainer.innerHTML = 'Please Wait...';
+        timerId = setInterval(getdat,1000);
+    }
+
+    function stopClock() {
         responseContainer.innerHTML = '';
-        btnStart.disabled=false;
-        btnStop.disabled=true;
+        btnStart.disabled = false;
+        btnStop.disabled = true;
         clearInterval(timerId);
     }
+
 
 
     /*
